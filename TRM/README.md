@@ -5,10 +5,12 @@
 ## 1. User CF
 
 #### 定义：基于用户之间的相似度来选取与目标用户相似的Top K个用户，然后从其中挑选目标用户没有购买过的商品进行推荐
-$$a=\frac{1}{2}$$
-#### 公式（1）：$$sim(i,j)=\cos(i,j)=\frac{i\cdot j}{||i||\cdot||j||}$$ （基于余弦相似度，该方法存在用户评分偏置的情况）
 
-#### 公式（2）：$$sim(i,j)=\frac{\sum\limits_{p\in P}(R_{i,p}-\overline{R_{i}})(R_{j,p}-\overline{R_{j}})}{\sqrt{\sum\limits_{p \in P}(R_{i,p}-\overline{R_{i}})}\sqrt{\sum\limits_{p\in P}(R_{j,p}-\overline{R_{j}})}}$$（基于皮尔逊相关稀疏，该方法考虑了用户的平均分来缓解评分偏置）
+#### 公式（1）：
+$$sim(i,j)=\cos(i,j)=\frac{i\cdot j}{||i||\cdot||j||}$$ （基于余弦相似度，该方法存在用户评分偏置的情况）
+
+#### 公式（2）：
+$$sim(i,j)=\frac{\sum\limits_{p\in P}(R_{i,p}-\overline{R_{i}})(R_{j,p}-\overline{R_{j}})}{\sqrt{\sum\limits_{p \in P}(R_{i,p}-\overline{R_{i}})}\sqrt{\sum\limits_{p\in P}(R_{j,p}-\overline{R_{j}})}}$$（基于皮尔逊相关稀疏，该方法考虑了用户的平均分来缓解评分偏置）
 
 #### 公式（3）：$$R_{u,p}=\frac{\sum\limits_{s \in S}(W_{u,s}\cdot R_{s,p})}{\sum\limits_{s\in S}(w_{u,s})}$$（最后使用选取Top K个相似的用户来预测目标用户的打分情况）
 
