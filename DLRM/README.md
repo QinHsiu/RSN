@@ -219,7 +219,7 @@ $$
 ##### 如上图所示，NFM的网络架构的特点非常明显，其在Embedding层和多层神经网络之间加入特征交叉池化层，其池化操作可以用以下表达式进行表示：
 
 $$
-f_{BI}(V_{x})=\sum^{N}\limits_{i=1}\sum^{N}\limits_{j=i+1}(x_{i}v_{i})\bigodot(x_{j}v_{j}),\bigodot表示元素积操作,V_{x}表示所有特征域的Embedding的集合\\(v_{i}\bigodot v_{j})_{k}=v_{ik}v_{jk},其中对于k维度的元素积操作如左所示
+f_{BI}(V_{x})=\sum^{N}\limits_{i=1}\sum^{N}\limits_{j=i+1}(x_{i}v_{i})\bigodot(x_{j}v_{j}),\bigodot表示元素积操作,V_{x}表示所有特征域的Embedding的集合\\\\(v_{i}\bigodot v_{j})_{k}=v_{ik}v_{jk},其中对于k维度的元素积操作如左所示
 $$
 
 ##### 在进行两两Embedding向量的元素积操作后，对交叉特征向量取和，得到池化层的输出向量。然后将该向量输入上层的多层全连接层神经网络进行进一步特征交叉。如果把NFM的一阶部分视为一个线性模型，那么NFM的架构也可以视为Wide&Deep模型的进化。其相比与FM具有更强的表达能力和特征交叉能力，但是其模型架构与PNN特别相似
