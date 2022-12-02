@@ -273,12 +273,18 @@ $$
 ##### 兴趣抽取层的基本单元是GRU网络，相比传统RNN和LSTM，GRU解决了RNN的梯度消失问题和LSTM参数量大的问题，其收敛速度更快，其中GRU公式如下所示：
 
 $$
-u_{t}=\sigma(W^{u}i_{t}+U^{u}h_{t-1}+b^{u})\\\\\
-r_{t}=\sigma(W^{t}i_{t}+U^{r}h_{t-1}+b^{r})\\\\\
-\tilde{h_{t}}=\tanh(W^{h}i_{t}+r_{t}\bigodot U^{h}h_{t-1}+b^{h})\\\\\
-h_{t}=(1-u_{t})\bigodot h_{t-1}+u_{t}\bigodot\tilde{h_{t}}\\\\\
-其中\sigma为sigmoid激活函数,\bigodot为元素积操作,W与U为需要学习的参数矩阵,\\\\\
-i_{t}为输入状态向量(各行为Embedding向量),h_{t}表示第t个隐状态向量
+u_{t}=\sigma(W^{u}i_{t}+U^{u}h_{t-1}+b^{u})
+$$
+$$
+r_{t}=\sigma(W^{t}i_{t}+U^{r}h_{t-1}+b^{r})
+$$
+$$
+\tilde{h_{t}}=\tanh(W^{h}i_{t}+r_{t}\bigodot U^{h}h_{t-1}+b^{h})
+$$
+h_{t}=(1-u_{t})\bigodot h_{t-1}+u_{t}\bigodot\tilde{h_{t}}
+$$
+$$
+其中\sigma为sigmoid激活函数,\bigodot为元素积操作,W与U为需要学习的参数矩阵,i_{t}为输入状态向量(各行为Embedding向量),h_{t}表示第t个隐状态向量
 $$
 
 ##### 兴趣进化层引入力注意力机制。其获得注意力得分的操作与DIN一致。其目的是更有针对性地模拟与目标广告相关的兴趣演化路径。兴趣进化层完成注意力机制是通过AUGRU机构完成的，AUGRU在GRU的基础上加入了注意力得分，具体形式如下所示：
