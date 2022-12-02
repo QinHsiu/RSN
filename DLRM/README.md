@@ -104,7 +104,7 @@ Loss=-\sum\limits_{i}y_{i}\ln(\sigma(x)_{i}),y_{i}表示真是标签值,\sigma(x
 $$
 
 $$
-\frac{\partial\sigma(x)_{i}}{\partial x_{i}}=\left\{\begin{array}{**lr**} \sigma(x)_{i}(1-\sigma(x)_{j}) &,i=j\\-\sigma(x)_{i}\cdot\sigma(x)_{j}&,i\neq j \end{array}\right.
+\frac{\partial\sigma(x)_{i}}{\partial x_{i}}=\left\\{\begin{array}{**lr**} \sigma(x)_{i}(1-\sigma(x)_{j}) &,i=j\\-\sigma(x)_{i}\cdot\sigma(x)_{j}&,i\neq j \end{array}\right.
 $$
 
 $$
@@ -118,7 +118,7 @@ Loss=-\sum\limits_{i}y_{i}\ln(\sigma(x)_{i})=-y_{k}\cdot\ln(\sigma(x)_{k})=-\ln(
 $$
 
 $$
-\frac{\partial Loss}{\partial x_{j}}=\frac{\partial(-\ln(\sigma(x)_{k}))}{\partial\sigma(x)_{k}}\cdot\frac{\partial\sigma(x)_{k}}{\partial x_{j}}=-\frac{1}{\sigma(x)_{k}}\cdot\frac{\partial\sigma(x)_{k}}{\partial x_{j}}=\left\{\begin{array}{**lr**}\sigma(x)_{j}-1&,j=k\\\sigma(x)_{j}&,j\neq k\end{array}\right.
+\frac{\partial Loss}{\partial x_{j}}=\frac{\partial(-\ln(\sigma(x)_{k}))}{\partial\sigma(x)_{k}}\cdot\frac{\partial\sigma(x)_{k}}{\partial x_{j}}=-\frac{1}{\sigma(x)_{k}}\cdot\frac{\partial\sigma(x)_{k}}{\partial x_{j}}=\left\\{\begin{array}{**lr**}\sigma(x)_{j}-1&,j=k\\\sigma(x)_{j}&,j\neq k\end{array}\right.
 $$
 
 ### 2.4 PNN模型
@@ -130,7 +130,7 @@ $$
 #####  相比与NeurCF，其在输入层新加入了一些不同的特征，另外其给出了更多的特征交互操作方式。其对于深度学习结构的主要创新在于引入了乘积层的。其乘积层主要由线性操作部分和乘积操作部分组成。其中乘积操作部分又分为内积操作和外积操作，使用内积操作的模型又称之为IPNN，使用外积操作的PNN模型又叫OPNN。其操作的对象都是两个不同的特征，为了保证乘积操作的顺利进行，两个特征的维度必须相同，内积操作与外积操作公式如下：
 
 $$
-\left\{\begin{array}{**lr**}g_{inner}(f_{i},f_{j})=<f_{i},f_{j}>\\g_{outer}(f_{i},f_{j})=f_{i}f^{T}_{j}\end{array}\right.
+\left\\{\begin{array}{**lr**}g_{inner}(f_{i},f_{j})=<f_{i},f_{j}>\\g_{outer}(f_{i},f_{j})=f_{i}f^{T}_{j}\end{array}\right.
 $$
 
 ##### 其中外积操作生成的是一个方形矩阵。这里外积的操作会将复杂度从原来的M上升到M方，为了进一步减少模型训练的负担，PNN模型介绍了一种降维的方法，就是将所有外积操作的结果进行叠加，形成一个叠加矩阵p。其中p最终形式类似于让所有特征向量通过一个平均池化层（注意平均池化往往适用于同类的特征，如果将不同种类的特征进行池化操作会模糊很多有用的信息），再进行外积互操作。具体公式如下所示：
