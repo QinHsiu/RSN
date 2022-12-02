@@ -104,7 +104,7 @@ Loss=-\sum\limits_{i}y_{i}\ln(\sigma(x)_{i}),y_{i}表示真是标签值,\sigma(x
 $$
 
 $$
-\frac{\partial\sigma(x)_{i}}{\partial x_{i}}=\left\\{\begin{array}{**lr**} \sigma(x)_{i}(1-\sigma(x)_{j}) &,i=j\\\-\sigma(x)_{i}\cdot\sigma(x)_{j}&,i\neq j \end{array}\right.
+\frac{\partial\sigma(x)_{i}}{\partial x_{i}}=\left\\{\begin{array}{**lr**} \sigma(x)_{i}(1-\sigma(x)_{j}) &,i=j\\\\-\sigma(x)_{i}\cdot\sigma(x)_{j}&,i\neq j \end{array}\right.
 $$
 
 $$
