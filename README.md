@@ -7,6 +7,9 @@
 # DLRM
 ### Deep Learning Recommendation Model
 
+# ER
+### Embedding for Recommendation
+
 # RACS
 ### Recommendation Algorithm Contest Solution
 
