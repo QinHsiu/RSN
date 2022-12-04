@@ -101,7 +101,7 @@ $$
 ##### DeepWalk的算法流程为：（1）首先输入为原始的用户行为序列；（2）基于这些输入行为序列进行构图（按照有向边进行构图）；（3）然后使用随机游走的方式随机选择起始点，重新生成物品序列；（4）将重新生成的序列表示放进Word2vec模型中，生成最终的物品Embedding向量。其核心在于随机游走重新构建序列的过程，其主要是需要定义在到达某一点之后，下一步遍历当前点的邻接点的概率（就是跳转边的权重所占所有相关出边权重之和的比例）；假设物品关系图为一个有向有权图（如果是无向无权图，取跳转概率计算中边的权重都为1），那么从当前节点跳到下一个节点的概率为：
 
 $$
-p(v_{j}|v_{i})=\left\{\begin{array}{**lr**}\frac{M_{ij}}{\sum\limits_{j\in N_{+}(v_{i})}M_{ij}}&,v_{j}\in N_{+}(v_{i}) \\ 0&,e_{ij}\notin \epsilon \end{array}\right.
+p(v_{j}|v_{i})=\left\\{\begin{array}{**lr**}\frac{M_{ij}}{\sum\limits_{j\in N_{+}(v_{i})}M_{ij}}&,v_{j}\in N_{+}(v_{i}) \\\\ 0&,e_{ij}\notin \epsilon \end{array}\right.
 $$
 
 $$
@@ -123,7 +123,7 @@ $$
 $$
 
 $$
-\alpha_{pq}(t,x)=\left\{\begin{array}{**lr**}\frac{1}{p}&, d_{tx}=0\\ 1&,d_{tx}=1\\ \frac{1}{q}&,d_{tx}=2 \end{array}\right.
+\alpha_{pq}(t,x)=\left\\{\begin{array}{**lr**}\frac{1}{p}&, d_{tx}=0\\\\ 1&,d_{tx}=1\\\\ \frac{1}{q}&,d_{tx}=2 \end{array}\right.
 $$
 
 $$
