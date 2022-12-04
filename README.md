@@ -1,5 +1,14 @@
 # RSN
-Recommendation System Notes
+### Recommendation System Notes
+
+# TRM
+### Traditional Recommendation Model
+
+# DLRM
+### Deep Learning Recommendation Model
+
+# RACS
+### Recommendation Algorithm Contest Solution
 
 # Reference
 ### 王喆 《深度学习推荐系统》
