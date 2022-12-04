@@ -1,4 +1,4 @@
-# 深度学习推荐模型（Deep Learning Recommendation System）
+# 深度学习推荐模型（Deep Learning Recommendation Model）
 
 ![avert](./pics/1.png)
 
