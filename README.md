@@ -13,6 +13,10 @@
 # ER
 ### Embedding for Recommendation
 
+# EIRS
+
+## Engineering Implementation of Recommendation System
+
 # RACS
 ### Recommendation Algorithm Contest Solution
 
